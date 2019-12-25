@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="less">
-  @import url(//at.alicdn.com/t/font_1401825_sanrc60022.css);
+  @import url(//at.alicdn.com/t/font_1401825_51x3pzsjpju.css);
 
   #app {
     background-color: #f5f5f5;

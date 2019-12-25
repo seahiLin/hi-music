@@ -1,12 +1,7 @@
 .player {
   position: fixed;
-  display: flex;
-  align-items: center;
   bottom: 0;
   height: .6rem;
-  padding: 0 .2rem;
-  border-radius: 0 .4rem .4rem 0;
-  background-color: #fff;
   color: #949494;
 
   &.active {
@@ -14,6 +9,20 @@
   }
 
   .controlers {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding:  0 .15rem;
+    user-select: none;
+    height: 100%;
+    line-height: .6rem;
+    background-color: #fff;
+    border-radius: 0 .4rem .4rem 0;
+
+    &.scroll-to-view {
+      border-radius: 0;
+      transition: all 0s .5s;
+    }
 
     .iconfont {
       margin: 0 .05rem;
@@ -22,9 +31,24 @@
     }
   }
 
+  .scroll {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-items: center;
+    height: 100%;
+    transition: all .8s linear;
+    background-color: #fff;
+    border-radius: 0 .4rem .4rem 0;
+
+    &.scroll-to-view {
+      transform: translateX(100%);
+    }
+  }
   .song-detail {
-    height: 60%;
-    margin: 0 .15rem;
+    height: .36rem;
+    margin: 0 .15rem 0 0;
     white-space: nowrap;
 
     img {
@@ -37,10 +61,11 @@
     }
 
     div {
-      overflow: auto;
+      // 问题点 overflow: auto;
+      margin-left: .46rem;
+      font-size: .14rem;
 
       &.content {
-        font-size: .14rem;
         cursor: pointer;
   
         & span {
@@ -72,25 +97,27 @@
         
         input[type="range"] {
           -webkit-appearance: none;
+          width: 2rem;
           height: .04rem;
           margin-right: .08rem;
           cursor: pointer;
           outline: none;
-          background-color: #c1c2c3;
+          background: linear-gradient(#da7caa) no-repeat, #c1c2c3;
+          background-size: 0% 100%;
           border-radius: .2rem;
           vertical-align: .04rem;
     
           &::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: .12rem;
-            height: .12rem;
+            width: .1rem;
+            height: .1rem;
             border-radius: 50%;
-            background-color: transparent;
           }
     
           &:hover {
             &::-webkit-slider-thumb {
-              background-color: #da7caa;
+              background-color: #fff;
+              border: 1px solid #818181;
             }
           }
         }
